@@ -20,7 +20,7 @@ echo "|                                                         LOADING IMAGES  
 echo "+----------------------------------------------------------------------------------------------------------------------------------+"
 
 echo "=> Pulling docker web-page image..."
-sudo docker pull giovannibaccichet/quiche-web
+sudo docker pull luigidoricats/quiche-web
 
 
 # DOCKER RUN PORT SETTINGS
@@ -49,11 +49,11 @@ echo "|                                                       RUNNING CONTAINERS
 echo "+----------------------------------------------------------------------------------------------------------------------------------+"
 
 echo "[TCP]: Web page"
-sudo docker run --name tcp-web -d -p $h1WEBp1:80 -p $h1WEBp2:443/tcp -p $h1WEBp2:443/udp -v $vagrantPath/confs/tcp.web.nginx.conf:/etc/nginx/nginx.conf -v $vagrantPath/certs/web/:/etc/nginx/certs/ giovannibaccichet/quiche-web
+sudo docker run --name tcp-web -d -p $h1WEBp1:80 -p $h1WEBp2:443/tcp -p $h1WEBp2:443/udp -v $vagrantPath/confs/tcp.web.nginx.conf:/etc/nginx/nginx.conf -v $vagrantPath/certs/web/:/etc/nginx/certs/ luigidoricats/quiche-web
 
 echo "[HTTP/2]: Web page"
-sudo docker run --name http2-web -d -p $h2WEBp1:80 -p $h2WEBp2:443/tcp -p $h2WEBp2:443/udp -v $vagrantPath/confs/http2.web.nginx.conf:/etc/nginx/nginx.conf -v $vagrantPath/certs/web/:/etc/nginx/certs/ giovannibaccichet/quiche-web
+sudo docker run --name http2-web -d -p $h2WEBp1:80 -p $h2WEBp2:443/tcp -p $h2WEBp2:443/udp -v $vagrantPath/confs/http2.web.nginx.conf:/etc/nginx/nginx.conf -v $vagrantPath/certs/web/:/etc/nginx/certs/ luigidoricats/quiche-web
 
 echo "[HTTP/3]: Web page"
-sudo docker run --name http3-web -d -p 80:80 -p 443:443/tcp -p 443:443/udp -v $vagrantPath/confs/http3.web.nginx.conf:/etc/nginx/nginx.conf -v $vagrantPath/certs/web/:/etc/nginx/certs/ giovannibaccichet/quiche-web
+sudo docker run --name http3-web -d -p 80:80 -p 443:443/tcp -p 443:443/udp -v $vagrantPath/confs/http3.web.nginx.conf:/etc/nginx/nginx.conf -v $vagrantPath/certs/web/:/etc/nginx/certs/ luigidoricats/quiche-web
                                                                                                                      
