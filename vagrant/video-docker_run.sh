@@ -20,7 +20,7 @@ echo "|                                                         LOADING IMAGES  
 echo "+----------------------------------------------------------------------------------------------------------------------------------+"
 
 echo "=> Pulling docker video streaming image..."
-sudo docker pull giovannibaccichet/quiche-video
+sudo docker pull luigidoricats/quiche-video
 
 
 # DOCKER RUN PORT SETTINGS
